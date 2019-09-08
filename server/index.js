@@ -10,9 +10,6 @@ app.use(compression())
 
 app.use(express.static('./build'))
 app.use('/', routes)
-app.get('/*', (_, res) => {
-  res.sendFile('./build/index.html')
-})
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`)
