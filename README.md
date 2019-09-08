@@ -1,68 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fullstack registration web application with nodejs technology. 
 
-## Available Scripts
+## Technologies
 
-In the project directory, you can run:
+<details><summary>UI Technologies</summary>
+<ul>
+  <li>HTML 5</li>
+  <li>CSS3</li>
+  <li>JavaScript Framework: <strong>React JS</strong></li>
+  <li>Ajax: <code>fetch</code></li>
+  <li>Unit test: <code>Jest</code></li>
+</ul>
+</details>
 
-### `npm start`
+<details><summary>Web Technologies</summary>
+<ul>
+  <li>RESTful</li>
+</ul>
+</details>
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<details><summary>Server Technologies</summary>
+<ul>
+  <li>Node js</li>
+  <li>Framework: <strong>express js</strong></li>
+</ul>
+</details>
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+<details><summary>Database</summary>
+<ul>
+  <li>PostgreSQL</li>
+  <li>ORM: <strong>sequelizer js</strong></li>
+</ul>
+</details>
 
-### `npm test`
+## Setup
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
+- Copy `.env.example` to `.env` in the root directory
+```
+> cp .env.example .env
+```
+- Set .env variable for connecting to database.
 
-### `npm run build`
+- Simply just install all node dependencies, run on the terminal:
+```
+> npm install
+```
+- Run the server
+```
+> node server
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Development Setup
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- Run installation process above.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Migrate database.
+```
+> npx sequelize-cli db:migrate 
+```
 
-### `npm run eject`
+- Run development server
+```
+> npm run dev
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Build
+```
+> npm run build
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Testing
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+> npm run test
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Deployment
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This app can deploy to heroku, [more info](https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app)
