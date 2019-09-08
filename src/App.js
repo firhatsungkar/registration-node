@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import RegistrationForm from './components/RegistrationForm'
 import LoginForm from './components/LoginForm'
+import Footer from './components/Footer'
 
 const Container = styled.div`
   width: 100%;
@@ -63,6 +64,7 @@ function App() {
           onSubmit={handleOnSubmit}
           errorMessage={errorMessage}/>
       )}
+      <Footer/>
     </Container>
   )
 }
