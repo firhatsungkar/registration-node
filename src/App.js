@@ -30,11 +30,11 @@ function App() {
       body: JSON.stringify(result)
     })
     .then( response => {
-      setDisabledForm(false)
       if ( response.status === 200 || response.status === 201 ) {
         const json = response.json()
         json.then(data => {
           setIsSuccess(true)
+          setErrorMessage('')
           console.log('data', data)
         })
       } else {
@@ -43,6 +43,7 @@ function App() {
           const { errors } = error
           const message = errors[0]['message']
           if (message) {
+            setDisabledForm(false)
             setErrorMessage(message)
           }
           console.error(error)
@@ -56,13 +57,12 @@ function App() {
   }
   return (
     <Container>
-      { isSuccess ? (
+      <RegistrationForm
+        disabled={disabledForm}
+        onSubmit={handleOnSubmit}
+        errorMessage={errorMessage}/>
+      { isSuccess && (
         <LoginForm />
-      ) : (
-        <RegistrationForm
-          disabled={disabledForm}
-          onSubmit={handleOnSubmit}
-          errorMessage={errorMessage}/>
       )}
       <Footer/>
     </Container>
